@@ -9,11 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@payloadcms/db-vercel-postgres": "^3.58.0",
+    "@payloadcms/next": "^3.58.0",
+    "@payloadcms/payload-cloud": "^3.58.0",
+    "@payloadcms/richtext-lexical": "^3.58.0",
     "@sentry/nextjs": "^10.17.0",
     "@tanstack/react-query": "^5.90.2",
     "date-fns": "^4.1.0",
+    "graphql": "^16.11.0",
     "import-in-the-middle": "^1.14.4",
     "next": "15.5.4",
+    "payload": "^3.58.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "zod": "^4.1.11",
