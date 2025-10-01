@@ -203,13 +203,16 @@ export default function GalleryView({
       ) : currentMedia.type === "video" ? (
         <video
           key={currentMedia.id}
-          src={currentMedia.src}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+          className="absolute inset-0 w-full h-full max-w-full object-cover transition-opacity duration-300"
           controls
           autoPlay
           loop
           muted
         >
+          <source
+            src={currentMedia.src}
+            type={`video/${currentMedia.extension}`}
+          />
           Your browser does not support the video tag.
         </video>
       ) : (
