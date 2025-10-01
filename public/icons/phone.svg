@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 24 24"
+   fill="none"
+   version="1.1"
+   id="svg2"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g
+     clip-path="url(#clip0_15_529)"
+     id="g1">
+    <path
+       d="m 2.01394,6.87134 c -0.66645,3.19046 1.84573,6.98836 5.00077,10.14336 3.15509,3.1551 6.95289,5.6673 10.14339,5.0008 2.6239,-0.5481 3.9634,-1.9458 4.7173,-3.1367 0.2601,-0.411 0.1288,-0.9444 -0.2611,-1.2352 l -3.6919,-2.7539 c -0.3981,-0.2969 -0.9539,-0.2567 -1.305,0.0945 l -1.9597,1.9596 c 0,0 -1.9048,-0.6192 -4.4289,-3.1432 C 7.70482,11.2766 7.08564,9.37175 7.08564,9.37175 L 9.04529,7.4121 C 9.39648,7.06091 9.43671,6.5052 9.13975,6.10709 L 6.38585,2.4151 C 6.09505,2.02525 5.56163,1.89395 5.15068,2.15407 3.9597,2.90794 2.56203,4.24747 2.01394,6.87134 Z"
+       stroke="#000000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path1"
+       style="fill:none;fill-opacity:1;stroke:#40b37c;stroke-opacity:1" />
+  </g>
+  <defs
+     id="defs2">
+    <clipPath
+       id="clip0_15_529">
+      <rect
+         width="24"
+         height="24"
+         fill="#ffffff"
+         id="rect2"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+</svg>
