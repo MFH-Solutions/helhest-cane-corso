@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MediaType } from "@/types/GalleryTypes";
+import { MediaType } from "@/types/gallery";
 
 type GalleryViewProps = React.HTMLAttributes<HTMLDivElement> & {
   medias: MediaType[];

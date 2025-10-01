@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo, useEffect } from "react";
 import GalleryControls from "./GalleryControls";
-import { MediaType } from "@/types/GalleryTypes";
+import { MediaType } from "@/types/gallery";
 
 type GalleryProps = React.HTMLAttributes<HTMLDivElement> & {
   medias: MediaType[];
