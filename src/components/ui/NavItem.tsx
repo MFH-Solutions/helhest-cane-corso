@@ -7,10 +7,10 @@ export default function NavItem({ item }: { item: nav.NavItem }) {
     <li>
       <Link
         href={item.href}
-        className="flex items-center p-2 group text-foreground"
+        className="flex items-center p-2 group text-white gap-1"
       >
         {item.icon && (
-          <div className="w-5 h-5 text-foreground transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white">
+          <div className="w-5 h-5 text-white transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white">
             {item.icon}
           </div>
         )}

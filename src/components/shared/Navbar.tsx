@@ -2,28 +2,19 @@ import { Dispatch, SetStateAction } from "react";
 import { DrawerNavigation } from "../ui/DrawerNavigation";
 import * as nav from "@/types/nav";
 import DesktopNavigation from "../ui/DesktopNavigation";
+import { useMobileNavToggle } from "@/store/useMobileNavToggle";
 
 type NavbarProps = {
   isMobile?: boolean;
-  isMenuOpen: boolean;
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
   navItems: nav.NavItem[];
 };
 
-export default function ({
-  isMobile,
-  isMenuOpen,
-  setIsMenuOpen,
-  navItems,
-}: NavbarProps) {
+export default function Navbar({ isMobile, navItems }: NavbarProps) {
+  const { isMenuOpen, toggleMenu } = useMobileNavToggle();
   return (
     <>
       {isMobile && (
-        <DrawerNavigation
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-          navItems={navItems}
-        />
+        <DrawerNavigation isMenuOpen={isMenuOpen} navItems={navItems} />
       )}
       <DesktopNavigation navItems={navItems} />
     </>

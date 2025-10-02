@@ -4,21 +4,22 @@ import { Dispatch, MouseEventHandler, SetStateAction, useState } from "react";
 import NavItem from "./NavItem";
 import NavDropdownItem from "./NavDropdownItem";
 import * as nav from "@/types/nav";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
+import { useMobileNavToggle } from "@/store/useMobileNavToggle";
 
 type DrawerNavigationProps = {
   isMenuOpen: boolean;
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
   navItems: nav.NavItem[];
   dropdowns?: nav.NavDropdown[];
 };
 
 export function DrawerNavigation({
   isMenuOpen,
-  setIsMenuOpen,
   navItems,
   dropdowns = [],
 }: DrawerNavigationProps) {
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
+  const { setIsMenuOpen } = useMobileNavToggle();
 
   const toggleDropdown = (id: string) => {
     setOpenDropdowns((prev) => {
@@ -93,30 +94,10 @@ export function DrawerNavigation({
                 onToggle={() => toggleDropdown(dropdown.id)}
               />
             ))}
+            <ThemeToggle className="ms-4" />
           </ul>
         </nav>
       </div>
     </>
-  );
-}
-
-// DrawerTrigger.tsx
-export function DrawerTrigger({
-  onClick,
-  children = "Show navigation",
-}: {
-  onClick: () => void;
-  children?: React.ReactNode;
-}) {
-  return (
-    <div className="text-center">
-      <button
-        onClick={onClick}
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-        type="button"
-      >
-        {children}
-      </button>
-    </div>
   );
 }

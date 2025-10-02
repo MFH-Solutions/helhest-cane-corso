@@ -2,6 +2,7 @@ import NavItem from "./NavItem";
 import NavDropdownItem from "./NavDropdownItem";
 import * as nav from "@/types/nav";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
 type NavigationProps = {
   navItems: nav.NavItem[];
@@ -28,10 +29,11 @@ export default function DesktopNavigation({
   // Fix navbar sizing
   return (
     <nav className="hidden md:flex">
-      <ul className="flex gap-1">
+      <ul className="flex items-center gap-1">
         {navItems.map((item) => (
           <NavItem key={item.id} item={item} />
         ))}
+        <ThemeToggle />
       </ul>
     </nav>
   );
