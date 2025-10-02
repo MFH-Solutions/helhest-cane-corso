@@ -14,5 +14,67 @@
     "description": "Cane Corso breeding according to the FCI standard. A breeding driven by passion for the breed, where I prioritize quality over quantity. My goal is to preserve the original Italian Cane Corso, with stable temperaments and strong health! European bloodlines to stay as close as possible to the heritage of the rustic Italian Cane Corso!",
     "cta_dog": "Meet our dogs",
     "cta_puppy": "See our puppies"
+  },
+  "Services": {
+    "title": "Committed to Quality, Guided by Ethics",
+    "description": "We go beyond industry standards to ensure our breeding program reflects our dedication to health, quality, care, and ethical practices. Our mission is to raise happy, healthy puppies while promoting responsible pet ownership.",
+    "health-card": {
+      "title": "Health",
+      "description": "We prioritize the health of each puppy through genetic testing, regular veterinary check-ups, and responsible breeding practices to ensure their well-being throughout their lives."
+    },
+    "quality-card": {
+      "title": "Quality",
+      "description": "Our breeding program follows the highest standards, focusing on strong pedigrees, excellent temperaments, and exceptional conformation."
+    },
+    "care-card": {
+      "title": "Care",
+      "description": "From birth to adoption, each puppy is raised with love, socialization, and a proper diet to ensure a happy and well-balanced companion."
+    },
+    "ethical-practice-card": {
+      "title": "Ethical Practices",
+      "description": "We are committed to responsible breeding, transparency, and the highest level of integrity, always prioritizing the well-being of our dogs."
+    }
+  },
+  "Contact": {
+    "title": "Contact Helhest Cane Corso",
+    "description": "Feel free to use the form or drop us an email. Old-fashioned phone call work too."
+  },
+  "FAQ": {
+    "inclusion": {
+      "title": "What's Included With Your Puppy",
+      "description": "All of our puppies come with a 26-month health guarantee against hereditary diseases. They receive their first set of vaccines, are regularly dewormed, and are microchipped and registered. Additionally, they are socialized from an early age following the proven Puppy Culture and Avidog programs, promoting balanced development, smooth adaptation to new environments, and a strong foundation for future training."
+    }
+  },
+  "About": {
+    "title": "A little about me...",
+    "description": "My love for the Cane Corso started in 2009, when I got my first dog of this breed. Before that, I had owned Dobermans and Bullies. But after experiencing this extraordinary dog, I couldn’t bring myself to own any other breed! After his passing, I got my second one, Jax, in 2016. He reignited my passion even more — I was obsessed! I wanted to know everything, see everything. I wanted the true Italian Cane Corso in all its aspects — both physical and temperamental. That’s when I started looking into importing a female to begin breeding. My Nera arrived from France in 2017. I was determined to build my breeding program on a solid foundation, with all the necessary health tests for the breed. The journey was long and challenging. I imported several dogs, some of which I had to remove from the program before I could truly begin. But I persevered. The dogs that form the foundation of my breeding program come from all over Europe (France, Serbia, Slovakia, Italy) to ensure I preserve the original heritage of the breed. My kennel is located in Val-des-Monts, Quebec, on a 40-acre property where my dogs have the freedom to roam and run in the forest daily as a pack. I run a small breeding program, producing approximately one litter per year. My dogs are registered with the Canadian Kennel Club, and I am a member of the Canadian Canine Club."
+  },
+  "DogPage": {},
+  "DogDetailsPage": {},
+  "PuppyPage": {},
+  "PuppyDetailsPage": {},
+  "AdoptionPage": {},
+  "Footer": {
+    "navigation": {
+      "title": "Navigation"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "websites": {
+      "title": "Websites"
+    },
+    "location": {
+      "title": "Location"
+    }
+  },
+  "Common": {
+    "Name": "Name",
+    "Email": "Email",
+    "Phone": "Phone",
+    "Message": "Message",
+    "Submit": "Submit",
+    "Details": "Details",
+    "Loading": "Loading..."
   }
 }

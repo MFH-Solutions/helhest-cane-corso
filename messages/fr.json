@@ -14,5 +14,67 @@
     "description": "Elevage de cane corso selon le standard FCI . Elevage par passion de la Race ici je priorise la qualité au dela de la quantité. Mon objectif est de préserver le cane corso italien originel avec des temperaments stable et une santé solide! Lignée européenne pour etre le plus pret de l'heritage du cane corso italien rustique!",
     "cta_dog": "Rencontrez nos chiens",
     "cta_puppy": "Voir nos chiots"
+  },
+  "Services": {
+    "title": "Engagés pour la Qualité, Guidés par l'Éthique",
+    "description": "Nous dépassons les normes de l'industrie afin que notre programme d'élevage reflète notre engagement envers la santé, la qualité, les soins et les pratiques éthiques. Notre mission est d'élever des chiots heureux et en bonne santé tout en promouvant une possession responsable des animaux de compagnie.",
+    "health-card": {
+      "title": "Santé",
+      "description": "Nous accordons la priorité à la santé de chaque chiot grâce à des tests génétiques, des visites vétérinaires régulières et des pratiques d'élevage responsables afin de garantir leur bien-être tout au long de leur vie."
+    },
+    "quality-card": {
+      "title": "Qualité",
+      "description": "Notre programme d'élevage suit les normes les plus élevées, en mettant l'accent sur des pedigrees solides, d'excellents tempéraments et une conformation exceptionnelle."
+    },
+    "care-card": {
+      "title": "Soins",
+      "description": "De la naissance à l'adoption, chaque chiot est élevé avec amour, socialisation et une alimentation adaptée pour garantir un compagnon heureux et bien équilibré."
+    },
+    "ethical-practice-card": {
+      "title": "Pratique Éthique",
+      "description": "Nous nous engageons à un élevage responsable, à la transparence et au plus haut niveau d'intégrité, en mettant toujours le bien-être de nos chiens en priorité."
+    }
+  },
+  "Contact": {
+    "title": "Contact Helhest Cane Corso",
+    "description": "N'hésitez pas à utiliser le formulaire ou à nous envoyer un e-mail. Un bon vieux coup de fil fonctionne aussi."
+  },
+  "FAQ": {
+    "inclusion": {
+      "title": "Ce qui est inclus avec votre chiot",
+      "description": "Tous nos chiots partent avec une garantie de santé de 26 mois contre les maladies héréditaires. Ils reçoivent leurs premiers vaccins, sont vermifugés régulièrement et identifiés par micropuce et enregistrer. De plus, ils sont socialisés dès leur plus jeune âge selon les programmes éprouvés Puppy Culture et Avidog, ce qui favorise un développement équilibré, une bonne adaptation à leur futur environnement et une base solide pour leur éducation."
+    }
+  },
+  "About": {
+    "title": "Un peu a propos de moi...",
+    "description": "Mon amour du cane corso a commencé en 2009 ou j’ai pris possession de mon premier chien de cette race j’avais auparavant eu des boberman et des bully apres se chien qui etais hors du commun je n’est pas ete capable d’avoir une autre race que celle la !! Apres son depart j’ai eu mon deuxième jax en 2016 celui la a reveiller ma passion de plus belle j’en mengeais tout simplement je voulais tout savoir tout voir je voulais le vrai cane corso italien sous tout ses aspects (physique et temperament) j’ai donc commencé a vouloir importer pour avoir une première femelle de reproduction! Ma nera qui est arrivé de la france en 2017 … je voulais a tout pris avoir mon elevage sous des bonnes bases avec les test de santé requis pour la race ! Le parcourt a ete long et l’aborieux j’ai importer plusieurs chiens a que jai du retirer … avant de pouvoir démarrer mon programme mais j’ai persévérer … mes chiens qui sont ma base d’élevage viennent de partout en europe (france,serbie ,slovaki ,italie ) pour avoir l’heritage d’origine !mon élevage est situer a val-des-monts au Québec sur une terre de 40 acres ou mes chiens on acces a etre libre et courrir en forêt a chaque jour en meute ! J’ai un petit programme de fais approximativement 1 portées par année mes chiens sont enregistrés a la fédération canine canadienne et je suis membre du club canin canadiens!"
+  },
+  "DogPage": {},
+  "DogDetailsPage": {},
+  "PuppyPage": {},
+  "PuppyDetailsPage": {},
+  "AdoptionPage": {},
+  "Footer": {
+    "navigation": {
+      "title": "Navigation"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "websites": {
+      "title": "Sites Web"
+    },
+    "location": {
+      "title": "Location"
+    }
+  },
+  "Common": {
+    "Name": "Nom",
+    "Email": "Courriel",
+    "Phone": "Téléphone",
+    "Message": "Message",
+    "Submit": "Envoyer",
+    "Details": "Détails",
+    "Loading": "Chargement..."
   }
 }
