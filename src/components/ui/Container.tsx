@@ -9,7 +9,7 @@ const Container: React.FC<ContainerProps> = ({
   className,
   ...props
 }) => {
-  const defaultClass = "container mx-auto px-4";
+  const defaultClass = "container mx-auto px-2 md:px-12";
   return (
     <div className={`${defaultClass} ${className}`} {...props}>
       {children}
