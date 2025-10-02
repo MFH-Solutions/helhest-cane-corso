@@ -5,30 +5,37 @@ import { DrawerNavigation } from "../ui/DrawerNavigation";
 import * as nav from "@/types/nav";
 import Link from "next/link";
 import Navbar from "./Navbar";
+import { useTranslations } from "next-intl";
 
-export default function HeaderClient() {
+export default async function HeaderClient() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations("Navigation");
 
   const links: Array<nav.NavItem> = [
     {
       id: "home",
-      label: "Home",
+      label: t("home"),
       href: "/",
     },
     {
       id: "breeding_dogs",
-      label: "Breeding Dogs",
+      label: t("dog"),
       href: "/dog",
     },
     {
       id: "puppy",
-      label: "Puppies",
+      label: t("puppy"),
       href: "/puppy",
     },
     {
       id: "contact",
-      label: "Contact",
+      label: t("contact"),
       href: "/#contact",
+    },
+    {
+      id: "lang-switch",
+      label: t("lang-switch"),
+      href: "",
     },
   ];
 

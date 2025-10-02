@@ -1,0 +1,12 @@
+{
+  "Header": {
+    "title": "Hello world!"
+  },
+  "Navigation": {
+    "home": "Home",
+    "dog": "Breeding Dogs",
+    "puppy": "Puppies",
+    "contact": "Contact",
+    "lang-switch": "FR"
+  }
+}
