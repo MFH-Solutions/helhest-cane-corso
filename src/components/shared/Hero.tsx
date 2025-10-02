@@ -2,7 +2,7 @@
 
 import Container from "@/components/ui/Container";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Button from "../ui/Button";
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -12,12 +12,15 @@ export default function Hero() {
       <Container>
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 w-full text-center md:text-left text-white">
-            <h1 className="text-[clamp(3rem, 6vw + 1rem, 5rem)] font-bold mb-4 text-primary">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-primary ">
               {t("title")}
             </h1>
             <p className="text-xl mb-8">{t("description")}</p>
+            <div className="flex gap-2">
+              <Button variant="primary">{t("cta_dog")}</Button>
+              <Button variant="secondary">{t("cta_puppy")}</Button>
+            </div>
           </div>
-          <div className="md:w-1/2 w-full"></div>
         </div>
       </Container>
     </section>

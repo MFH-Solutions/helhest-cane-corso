@@ -5,14 +5,54 @@ const defaultStyle =
   "px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 disabled:opacity-50";
 
 const variants = {
-  primary:
-    "bg-green-400 text-green-400 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800",
-  secondary:
-    "focus:outline-none text-white bg-gray-400 hover:bg-gray-500 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-900",
-  warning:
-    "focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900",
-  danger:
-    "focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900",
+  primary: `
+  focus:outline-none
+  text-white
+  bg-primary
+  hover:bg-primary-hover
+  focus:ring-4
+  focus:ring-primary-ring
+  dark:bg-primary
+  dark:hover:bg-primary-hover
+  dark:focus:ring-primary-ring
+`,
+
+  secondary: `
+  focus:outline-none
+  text-primary
+  bg-transparent
+  border border-primary
+  hover:bg-primary hover:text-white
+  focus:ring-4
+  focus:ring-primary-ring
+  dark:text-primary
+  dark:border-primary
+  dark:hover:bg-primary dark:hover:text-white
+  dark:focus:ring-primary-ring
+`,
+  warning: `
+  focus:outline-none
+  text-white
+  bg-warning
+  hover:bg-warning-hover
+  focus:ring-4
+  focus:ring-warning-ring
+  dark:bg-warning
+  dark:hover:bg-warning-hover
+  dark:focus:ring-warning-ring
+`,
+
+  danger: `
+  focus:outline-none
+  text-white
+  bg-danger
+  hover:bg-danger-hover
+  focus:ring-4
+  focus:ring-danger-ring
+  dark:bg-danger
+  dark:hover:bg-danger-hover
+  dark:focus:ring-danger-ring
+`,
 };
 
 const sizes = {

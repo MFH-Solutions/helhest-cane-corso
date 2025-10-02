@@ -2,12 +2,26 @@
 
 @theme {
   --color-background: #faf9f6;
-  --color-surface: #ffffff; /* for cards, modals, etc */
+  --color-surface: #ffffff;
   --color-primary: #40b37c;
-  --color-secondary: #ffd166;
-  --color-foreground: #2b2d42; /* main text color */
-  --color-muted: #6c757d; /* secondary text */
+  --color-primary-hover: #379c6c;
+  --color-primary-ring: #8edbb7;
+
+  --color-secondary: #40b37c;
+  --color-secondary-hover: #2f8a60;
+  --color-secondary-ring: #2a4d3a;
+
+  --color-foreground: #2b2d42;
+  --color-muted: #6c757d;
   --color-border: #e0e0e0;
+
+  --color-warning: #facc15; /* yellow-400 */
+  --color-warning-hover: #eab308; /* yellow-500 */
+  --color-warning-ring: #fde68a; /* yellow-200/300 */
+
+  --color-danger: #dc2626; /* red-600/700 */
+  --color-danger-hover: #b91c1c; /* red-700/800 */
+  --color-danger-ring: #fca5a5; /* red-300 */
 }
 
 @layer base {
@@ -15,9 +29,23 @@
     --color-background: #1a1a1d;
     --color-surface: #242429;
     --color-primary: #40b37c;
+    --color-primary-hover: #2f8a60;
+    --color-primary-ring: #2a4d3a;
+
     --color-secondary: #40b37c;
+    --color-secondary-hover: #2f8a60;
+    --color-secondary-ring: #2a4d3a;
+
     --color-foreground: #f1f1f1;
     --color-muted: #a9a9b3;
     --color-border: #33343a;
+
+    --color-warning: #eab308; /* yellow-500 */
+    --color-warning-hover: #ca8a04; /* yellow-600 */
+    --color-warning-ring: #854d0e; /* deeper yellow-brown */
+
+    --color-danger: #ef4444; /* red-500/600 */
+    --color-danger-hover: #dc2626; /* red-700 */
+    --color-danger-ring: #7f1d1d; /* deep red */
   }
 }

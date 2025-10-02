@@ -10,7 +10,9 @@
     "lang-switch": "FR"
   },
   "Hero": {
-    "title": "The Cane Corso — Strength and Elegance",
-    "description": "Cane Corso breeding according to the FCI standard. A breeding driven by passion for the breed, where I prioritize quality over quantity. My goal is to preserve the original Italian Cane Corso, with stable temperaments and strong health! European bloodlines to stay as close as possible to the heritage of the rustic Italian Cane Corso!"
+    "title": "The Cane Corso Strength and Elegance",
+    "description": "Cane Corso breeding according to the FCI standard. A breeding driven by passion for the breed, where I prioritize quality over quantity. My goal is to preserve the original Italian Cane Corso, with stable temperaments and strong health! European bloodlines to stay as close as possible to the heritage of the rustic Italian Cane Corso!",
+    "cta_dog": "Meet our dogs",
+    "cta_puppy": "See our puppies"
   }
 }

@@ -40,8 +40,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="relative bg-black min-h-screen flex flex-col border-b border-gray-200">
-      <div className="absolute inset-0 bg-[url('/images/header/background.jpg')] bg-cover bg-center opacity-60" />
+    <header className="relative bg-black min-h-screen flex flex-col">
+      <div className="absolute inset-0 bg-[url('/images/header/background.jpg')] bg-cover bg-center opacity-25" />
       <Container className="z-30 sticky top-0 py-4 flex justify-between items-center">
         <div className="w-full flex justify-between items-center">
           {/* LOGO */}
