@@ -1,0 +1,12 @@
+{
+  "HomePage": {
+    "title": "Bonjour le monde!"
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "dog": "Chiens Reproducteurs",
+    "puppy": "Chiots",
+    "contact": "Contact",
+    "lang-switch": "EN"
+  }
+}
