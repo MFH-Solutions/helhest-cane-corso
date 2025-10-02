@@ -1,28 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-type ImageCardProps = {
+type CardProps = {
   title: string;
   description: string;
   href?: string;
   imageSrc?: string;
   imageAlt?: string;
   buttonText?: string;
-};
+  className?: string;
+} & Omit<HTMLMotionProps<"div">, "title">;
 
-export default function ImageCard({
+export default function Card({
   href,
   imageSrc,
   imageAlt,
   title,
   description,
   buttonText,
-}: ImageCardProps) {
+  className,
+  ...props
+}: CardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.01 }}
-      className="max-w-sm bg-background border border-border rounded-lg shadow-sm dark:bg-background dark:border-border hover:transform"
+      className={`max-w-sm bg-background border border-border rounded-lg shadow-sm dark:bg-background dark:border-border hover:transform ${className || ""}`}
+      {...props}
     >
       {imageSrc &&
         (href ? (
@@ -46,24 +50,21 @@ export default function ImageCard({
             />
           </div>
         ))}
-
       <div className="p-5">
         {href ? (
           <Link href={href}>
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-primary dark:text-primary">
+            <h5 className="mb-2 text-2xl tracking-tight text-primary dark:text-primary">
               {title}
             </h5>
           </Link>
         ) : (
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-primary dark:text-primary">
+          <h5 className="mb-2 text-2xl tracking-tight text-primary dark:text-primary">
             {title}
           </h5>
         )}
-
         <p className="mb-3 font-normal text-muted dark:text-muted">
           {description}
         </p>
-
         {buttonText && href && (
           <Link
             href={href}

@@ -1,6 +1,6 @@
 import React from "react";
 
-export type ContainerProps = React.HTMLAttributes<HTMLDivElement> & {
+type ContainerProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
 };
 
