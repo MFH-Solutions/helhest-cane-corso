@@ -11,12 +11,12 @@ export default function Hero() {
     <section id="hero" className="py-20 min-h-[400px] z-10">
       <Container>
         <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2 w-full text-center md:text-left text-white">
+          <div className="md:w-1/2 w-full text-white">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-primary ">
               {t("title")}
             </h1>
             <p className="text-xl mb-8">{t("description")}</p>
-            <div className="flex gap-2">
+            <div className="flex flex-col md:flex-row gap-2">
               <Button variant="primary">{t("cta_dog")}</Button>
               <Button variant="secondary">{t("cta_puppy")}</Button>
             </div>
