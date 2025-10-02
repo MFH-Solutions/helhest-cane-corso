@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "./Navbar";
 import { useTranslations } from "next-intl";
 import { useMobileNavToggle } from "@/store/useMobileNavToggle"; // Import the store
+import Hero from "./Hero";
 
 export default function Header() {
   const { toggleMenu } = useMobileNavToggle();
@@ -41,9 +42,7 @@ export default function Header() {
   return (
     <header className="relative bg-black min-h-screen flex flex-col border-b border-gray-200">
       <div className="absolute inset-0 bg-[url('/images/header/background.jpg')] bg-cover bg-center opacity-60" />
-
-      <Container className="z-10 sticky top-0 py-4 flex justify-between items-center">
-        {" "}
+      <Container className="z-30 sticky top-0 py-4 flex justify-between items-center">
         <div className="w-full flex justify-between items-center">
           {/* LOGO */}
           <Link href="/">
@@ -52,7 +51,7 @@ export default function Header() {
             </div>
           </Link>
           {/* Mobile Navbar Trigger */}
-          <button className="md:hidden z-100 " onClick={toggleMenu}>
+          <button className="md:hidden z-100" onClick={toggleMenu}>
             <img
               src="/icons/nav-toggle.svg"
               className="h-8 w-auto object-cover"
@@ -61,6 +60,7 @@ export default function Header() {
           <Navbar navItems={links} isMobile={true} />
         </div>
       </Container>
+      <Hero />
     </header>
   );
 }
