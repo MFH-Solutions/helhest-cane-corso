@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type ImageCardProps = {
-  href: string;
-  imageSrc: string;
-  imageAlt: string;
   title: string;
   description: string;
+  href?: string;
+  imageSrc?: string;
+  imageAlt?: string;
   buttonText?: string;
 };
 
@@ -16,46 +17,77 @@ export default function ImageCard({
   imageAlt,
   title,
   description,
-  buttonText = "Read more",
+  buttonText,
 }: ImageCardProps) {
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-      <Link href={href}>
-        <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
-          <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
-        </div>
-      </Link>
+    <motion.div
+      whileHover={{ scale: 1.01 }}
+      className="max-w-sm bg-background border border-border rounded-lg shadow-sm dark:bg-background dark:border-border hover:transform"
+    >
+      {imageSrc &&
+        (href ? (
+          <Link href={href}>
+            <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
+              <Image
+                src={imageSrc}
+                alt={imageAlt || title}
+                fill
+                className="object-container"
+              />
+            </div>
+          </Link>
+        ) : (
+          <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
+            <Image
+              src={imageSrc}
+              alt={imageAlt || title}
+              fill
+              className="object-container p-4"
+            />
+          </div>
+        ))}
+
       <div className="p-5">
-        <Link href={href}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-blue-700 dark:hover:text-blue-500 transition-colors">
+        {href ? (
+          <Link href={href}>
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-primary dark:text-primary">
+              {title}
+            </h5>
+          </Link>
+        ) : (
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-primary dark:text-primary">
             {title}
           </h5>
-        </Link>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        )}
+
+        <p className="mb-3 font-normal text-muted dark:text-muted">
           {description}
         </p>
-        <Link
-          href={href}
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          {buttonText}
-          <svg
-            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
+
+        {buttonText && href && (
+          <Link
+            href={href}
+            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-foreground bg-background rounded-lg focus:ring-4 focus:outline-none focus:primary-ring dark:primary dark:primary-hover dark:focus:primary-ring"
           >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </Link>
+            {buttonText}
+            <svg
+              className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </Link>
+        )}
       </div>
-    </div>
+    </motion.div>
   );
 }

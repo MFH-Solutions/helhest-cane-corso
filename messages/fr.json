@@ -18,19 +18,19 @@
   "Services": {
     "title": "Engagés pour la Qualité, Guidés par l'Éthique",
     "description": "Nous dépassons les normes de l'industrie afin que notre programme d'élevage reflète notre engagement envers la santé, la qualité, les soins et les pratiques éthiques. Notre mission est d'élever des chiots heureux et en bonne santé tout en promouvant une possession responsable des animaux de compagnie.",
-    "health-card": {
+    "health": {
       "title": "Santé",
       "description": "Nous accordons la priorité à la santé de chaque chiot grâce à des tests génétiques, des visites vétérinaires régulières et des pratiques d'élevage responsables afin de garantir leur bien-être tout au long de leur vie."
     },
-    "quality-card": {
+    "quality": {
       "title": "Qualité",
       "description": "Notre programme d'élevage suit les normes les plus élevées, en mettant l'accent sur des pedigrees solides, d'excellents tempéraments et une conformation exceptionnelle."
     },
-    "care-card": {
+    "care": {
       "title": "Soins",
       "description": "De la naissance à l'adoption, chaque chiot est élevé avec amour, socialisation et une alimentation adaptée pour garantir un compagnon heureux et bien équilibré."
     },
-    "ethical-practice-card": {
+    "ethical": {
       "title": "Pratique Éthique",
       "description": "Nous nous engageons à un élevage responsable, à la transparence et au plus haut niveau d'intégrité, en mettant toujours le bien-être de nos chiens en priorité."
     }

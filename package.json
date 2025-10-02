@@ -16,6 +16,7 @@
     "@sentry/nextjs": "^10.17.0",
     "@tanstack/react-query": "^5.90.2",
     "date-fns": "^4.1.0",
+    "framer-motion": "^12.23.22",
     "graphql": "^16.11.0",
     "import-in-the-middle": "^1.14.4",
     "lucide-react": "^0.544.0",

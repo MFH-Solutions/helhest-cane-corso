@@ -18,19 +18,19 @@
   "Services": {
     "title": "Committed to Quality, Guided by Ethics",
     "description": "We go beyond industry standards to ensure our breeding program reflects our dedication to health, quality, care, and ethical practices. Our mission is to raise happy, healthy puppies while promoting responsible pet ownership.",
-    "health-card": {
+    "health": {
       "title": "Health",
       "description": "We prioritize the health of each puppy through genetic testing, regular veterinary check-ups, and responsible breeding practices to ensure their well-being throughout their lives."
     },
-    "quality-card": {
+    "quality": {
       "title": "Quality",
       "description": "Our breeding program follows the highest standards, focusing on strong pedigrees, excellent temperaments, and exceptional conformation."
     },
-    "care-card": {
+    "care": {
       "title": "Care",
       "description": "From birth to adoption, each puppy is raised with love, socialization, and a proper diet to ensure a happy and well-balanced companion."
     },
-    "ethical-practice-card": {
+    "ethical": {
       "title": "Ethical Practices",
       "description": "We are committed to responsible breeding, transparency, and the highest level of integrity, always prioritizing the well-being of our dogs."
     }
