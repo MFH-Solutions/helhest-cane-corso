@@ -9,7 +9,7 @@ export default function Contacts() {
   const f = useTranslations("FAQ");
 
   return (
-    <section className="bg-foreground text-background dark:bg-background dark:text-foreground min-h-[400px] p-4">
+    <section className="bg-[#1a1b16] min-h-[400px] py-16">
       <Container>
         {/* Inner Container */}
         <div className="flex flex-col md:flex-row gap-8">
@@ -19,9 +19,7 @@ export default function Contacts() {
               <h2 className="text-primary dark:text-primary text-2xl lg:text-3xl xl:text-4xl">
                 {t("title")}
               </h2>
-              <p className="text-foreground dark:text-foreground">
-                {t("description")}
-              </p>
+              <p className="text-white">{t("description")}</p>
             </div>
             <div className="flex flex-col gap-4">
               <IconText
