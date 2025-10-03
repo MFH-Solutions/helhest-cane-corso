@@ -36,7 +36,7 @@ export default function Services() {
   ];
 
   return (
-    <motion.section className="mx-4 my-8">
+    <section className="mx-4 my-8">
       <FadeInWhenVisible>
         <Container className="shadow-xl bg-background rounded-xl flex flex-col gap-4 p-4">
           <div className="flex flex-col md:flex-row gap-4">
@@ -61,6 +61,6 @@ export default function Services() {
           </AutoGrid>
         </Container>
       </FadeInWhenVisible>
-    </motion.section>
+    </section>
   );
 }

@@ -74,7 +74,6 @@ export default function GalleryView({
           </svg>
         </div>
       )}
-
       {/* Left chevron */}
       <div
         className={`${
@@ -102,7 +101,6 @@ export default function GalleryView({
           />
         </svg>
       </div>
-
       {/* Right chevron */}
       <div
         className={`${
@@ -130,48 +128,70 @@ export default function GalleryView({
           />
         </svg>
       </div>
+      {/* Dot indicators - Instagram style with max 5 dots */}
+      <div
+        className={`${
+          isFullScreen ? "bottom-8 gap-2" : "bottom-2 gap-1.5"
+        } absolute left-1/2 -translate-x-1/2 flex z-10`}
+      >
+        {(() => {
+          const totalDots = Math.min(medias.length, 5);
+          const dots = [];
 
-      {/* Counter or Dot indicators */}
-      {showCounter ? (
-        // Counter display for many items
-        <div
-          className={`${
-            isFullScreen
-              ? "bottom-8 text-base px-4 py-2"
-              : "bottom-2 text-sm px-3 py-1.5"
-          } absolute left-1/2 -translate-x-1/2 z-10 bg-black bg-opacity-60 rounded-full text-white font-medium`}
-        >
-          {currentIndex + 1} / {medias.length}
-        </div>
-      ) : (
-        // Dot indicators for few items
-        <div
-          className={`${
-            isFullScreen ? "bottom-8 gap-3" : "bottom-2 gap-2"
-          } absolute left-1/2 -translate-x-1/2 flex z-10 bg-black bg-opacity-40 rounded-full px-3 py-2`}
-        >
-          {medias.map((media, index) => (
-            <svg
-              key={media.id}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="white"
-              className={`${
-                isFullScreen ? "size-3" : "size-2"
-              } cursor-pointer transition-opacity duration-300 ${
-                index === currentIndex ? "opacity-100" : "opacity-50"
-              } hover:opacity-75`}
-              onClick={(e) => {
-                if (isFullScreen) e.stopPropagation();
-                onDotClick(index);
-              }}
-            >
-              <circle cx="12" cy="12" r="8" />
-            </svg>
-          ))}
-        </div>
-      )}
+          if (medias.length <= 5) {
+            // Show all dots if 5 or fewer
+            for (let i = 0; i < medias.length; i++) {
+              dots.push(
+                <div
+                  key={i}
+                  className={`${
+                    isFullScreen ? "w-2 h-2" : "w-1.5 h-1.5"
+                  } rounded-full cursor-pointer transition-all duration-200 ease-out ${
+                    i === currentIndex
+                      ? "bg-blue-400 opacity-100 scale-110"
+                      : "bg-white opacity-40"
+                  } hover:opacity-75`}
+                  onClick={(e) => {
+                    if (isFullScreen) e.stopPropagation();
+                    onDotClick(i);
+                  }}
+                />,
+              );
+            }
+          } else {
+            // Instagram logic: always show 5 dots
+            let activeIndex;
 
+            if (currentIndex <= 1) {
+              // First two images: active dot at position 0 or 1
+              activeIndex = currentIndex;
+            } else if (currentIndex >= medias.length - 2) {
+              // Last two images: active dot at position 3 or 4
+              activeIndex = 4 - (medias.length - 1 - currentIndex);
+            } else {
+              // Middle images: active dot always at position 2
+              activeIndex = 2;
+            }
+
+            for (let i = 0; i < 5; i++) {
+              dots.push(
+                <div
+                  key={i}
+                  className={`${
+                    isFullScreen ? "w-2 h-2" : "w-1.5 h-1.5"
+                  } rounded-full transition-all duration-200 ease-out ${
+                    i === activeIndex
+                      ? "bg-blue-400 opacity-100 scale-110"
+                      : "bg-white opacity-40"
+                  }`}
+                />,
+              );
+            }
+          }
+
+          return dots;
+        })()}
+      </div>
       {/* Media content */}
       {isFullScreen ? (
         <div
@@ -222,7 +242,7 @@ export default function GalleryView({
           alt={currentMedia.alt}
           priority
           fill
-          className="object-cover transition-opacity duration-300"
+          className="object-container transition-opacity duration-300"
         />
       )}
     </div>

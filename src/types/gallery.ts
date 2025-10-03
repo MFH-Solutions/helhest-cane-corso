@@ -3,7 +3,7 @@ export type MediaType = {
   src: string;
   alt: string;
   type: "image" | "video";
-  extension: "";
+  extension: "jpg" | "jpeg" | "png" | "mp4";
   isPrimary: boolean;
   isActive: boolean;
 };
