@@ -7,11 +7,13 @@ import { ThemeToggle } from "@/components/shared/ThemeToggle";
 type NavigationProps = {
   navItems: nav.NavItem[];
   dropdowns?: nav.NavDropdown[];
+  isHeaderNav?: boolean;
 };
 
 export default function DesktopNavigation({
   navItems,
   dropdowns = [],
+  isHeaderNav = false,
 }: NavigationProps) {
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
 
@@ -35,7 +37,7 @@ export default function DesktopNavigation({
           <li key={item.id}>
             <a
               href={item.href}
-              className="text-white hover:text-primary transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
+              className={`text-white ${isHeaderNav ? "hover:text-primary" : "hover:text-white/80"}  transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1`}
             >
               {item.label}
             </a>
