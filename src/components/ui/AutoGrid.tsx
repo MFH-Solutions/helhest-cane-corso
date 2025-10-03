@@ -8,6 +8,7 @@ export default function AutoGrid({
   minSize = "250px",
   autoSizing = "auto-fit",
   children,
+  className,
   ...props
 }: AutoGridProps) {
   return (
@@ -15,8 +16,9 @@ export default function AutoGrid({
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${autoSizing}, minmax(min(${minSize}, 100%), 1fr))`,
-        gap: "1rem",
+        gap: "2rem", // 8pt system: 32px
       }}
+      className={className}
       {...props}
     >
       {children}

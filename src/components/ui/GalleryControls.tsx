@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { MediaType } from "@/types/gallery";
+import { X, Maximize2, ChevronLeft, ChevronRight } from "lucide-react";
 
 type GalleryViewProps = React.HTMLAttributes<HTMLDivElement> & {
   medias: MediaType[];
@@ -25,136 +26,103 @@ export default function GalleryView({
   }
 
   const currentMedia = medias[currentIndex];
-  const showCounter = medias.length > 5; // Show counter instead of dots if more than 5 items
 
   return (
     <div
       className={`${
         isFullScreen
-          ? "fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center"
-          : "images-container aspect-[4/3] relative rounded-lg overflow-hidden"
+          ? "fixed inset-0 bg-black/95 z-50 flex items-center justify-center"
+          : "relative aspect-[4/3] rounded-xl overflow-hidden bg-surface"
       }`}
       onClick={isFullScreen ? onFullScreen : undefined}
+      role="region"
+      aria-label="Image gallery"
+      aria-live="polite"
     >
-      {/* Close or Fullscreen icon */}
+      {/* Close or Fullscreen button - 8pt spacing */}
       {isFullScreen ? (
-        <div className="absolute right-4 top-4 z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-all cursor-pointer hover:scale-110">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="white"
-            className="size-6"
-            onClick={onFullScreen}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
-        </div>
+        <button
+          onClick={onFullScreen}
+          className="absolute right-4 top-4 z-10 p-3 bg-black/50 rounded-full hover:bg-black/70 transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+          aria-label="Close fullscreen"
+        >
+          <X className="w-6 h-6 text-white" aria-hidden="true" />
+        </button>
       ) : (
-        <div className="absolute right-0 top-0 m-1 z-10 bg-white bg-opacity-70 rounded-md p-1 hover:bg-opacity-90 transition-all cursor-pointer hover:scale-110">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-5"
-            onClick={onFullScreen}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
-            />
-          </svg>
-        </div>
+        <button
+          onClick={onFullScreen}
+          className="absolute right-2 top-2 z-10 p-2 bg-white/80 rounded-lg hover:bg-white transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          aria-label="View fullscreen"
+        >
+          <Maximize2 className="w-5 h-5 text-foreground" aria-hidden="true" />
+        </button>
       )}
-      {/* Left chevron */}
-      <div
-        className={`${
-          isFullScreen
-            ? "left-4 bg-black bg-opacity-50 p-3"
-            : "left-0 m-1 bg-white bg-opacity-70 p-1"
-        } absolute top-1/2 -translate-y-1/2 z-10 rounded-full hover:bg-opacity-90 transition-all cursor-pointer hover:scale-110`}
+
+      {/* Previous button - 8pt spacing */}
+      <button
         onClick={(e) => {
           if (isFullScreen) e.stopPropagation();
           onPrevious();
         }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={isFullScreen ? 2 : 1.5}
-          stroke={isFullScreen ? "white" : "currentColor"}
-          className={isFullScreen ? "size-8" : "size-5"}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M15.75 19.5 8.25 12l7.5-7.5"
-          />
-        </svg>
-      </div>
-      {/* Right chevron */}
-      <div
         className={`${
-          isFullScreen
-            ? "right-4 bg-black bg-opacity-50 p-3"
-            : "right-0 m-1 bg-white bg-opacity-70 p-1"
-        } absolute top-1/2 -translate-y-1/2 z-10 rounded-full hover:bg-opacity-90 transition-all cursor-pointer hover:scale-110`}
+          isFullScreen ? "left-4 p-3 bg-black/50" : "left-2 p-2 bg-white/80"
+        } absolute top-1/2 -translate-y-1/2 z-10 rounded-full hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2`}
+        aria-label="Previous image"
+      >
+        <ChevronLeft
+          className={`${isFullScreen ? "w-8 h-8 text-white" : "w-5 h-5 text-foreground"}`}
+          aria-hidden="true"
+        />
+      </button>
+
+      {/* Next button - 8pt spacing */}
+      <button
         onClick={(e) => {
           if (isFullScreen) e.stopPropagation();
           onNext();
         }}
+        className={`${
+          isFullScreen ? "right-4 p-3 bg-black/50" : "right-2 p-2 bg-white/80"
+        } absolute top-1/2 -translate-y-1/2 z-10 rounded-full hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2`}
+        aria-label="Next image"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={isFullScreen ? 2 : 1.5}
-          stroke={isFullScreen ? "white" : "currentColor"}
-          className={isFullScreen ? "size-8" : "size-5"}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m8.25 4.5 7.5 7.5-7.5 7.5"
-          />
-        </svg>
-      </div>
-      {/* Dot indicators - Instagram style with max 5 dots */}
+        <ChevronRight
+          className={`${isFullScreen ? "w-8 h-8 text-white" : "w-5 h-5 text-foreground"}`}
+          aria-hidden="true"
+        />
+      </button>
+
+      {/* Dot indicators - Instagram style with 8pt spacing */}
       <div
         className={`${
-          isFullScreen ? "bottom-8 gap-2" : "bottom-2 gap-1.5"
+          isFullScreen ? "bottom-8 gap-2" : "bottom-4 gap-2"
         } absolute left-1/2 -translate-x-1/2 flex z-10`}
+        role="tablist"
+        aria-label="Gallery navigation"
       >
         {(() => {
-          const totalDots = Math.min(medias.length, 5);
           const dots = [];
 
           if (medias.length <= 5) {
             // Show all dots if 5 or fewer
             for (let i = 0; i < medias.length; i++) {
               dots.push(
-                <div
+                <button
                   key={i}
-                  className={`${
-                    isFullScreen ? "w-2 h-2" : "w-1.5 h-1.5"
-                  } rounded-full cursor-pointer transition-all duration-200 ease-out ${
-                    i === currentIndex
-                      ? "bg-blue-400 opacity-100 scale-110"
-                      : "bg-white opacity-40"
-                  } hover:opacity-75`}
                   onClick={(e) => {
                     if (isFullScreen) e.stopPropagation();
                     onDotClick(i);
                   }}
+                  className={`${
+                    isFullScreen ? "w-2 h-2" : "w-2 h-2"
+                  } rounded-full transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                    i === currentIndex
+                      ? "bg-primary opacity-100 scale-110"
+                      : "bg-foreground opacity-60 hover:opacity-80"
+                  }`}
+                  role="tab"
+                  aria-selected={i === currentIndex}
+                  aria-label={`View image ${i + 1} of ${medias.length}`}
                 />,
               );
             }
@@ -163,13 +131,10 @@ export default function GalleryView({
             let activeIndex;
 
             if (currentIndex <= 1) {
-              // First two images: active dot at position 0 or 1
               activeIndex = currentIndex;
             } else if (currentIndex >= medias.length - 2) {
-              // Last two images: active dot at position 3 or 4
               activeIndex = 4 - (medias.length - 1 - currentIndex);
             } else {
-              // Middle images: active dot always at position 2
               activeIndex = 2;
             }
 
@@ -178,12 +143,14 @@ export default function GalleryView({
                 <div
                   key={i}
                   className={`${
-                    isFullScreen ? "w-2 h-2" : "w-1.5 h-1.5"
+                    isFullScreen ? "w-2 h-2" : "w-2 h-2"
                   } rounded-full transition-all duration-200 ease-out ${
                     i === activeIndex
-                      ? "bg-blue-400 opacity-100 scale-110"
-                      : "bg-white opacity-40"
+                      ? "bg-primary opacity-100 scale-110"
+                      : "bg-foreground opacity-60"
                   }`}
+                  role="presentation"
+                  aria-hidden="true"
                 />,
               );
             }
@@ -192,6 +159,12 @@ export default function GalleryView({
           return dots;
         })()}
       </div>
+
+      {/* Current image indicator for screen readers */}
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        Image {currentIndex + 1} of {medias.length}
+      </div>
+
       {/* Media content */}
       {isFullScreen ? (
         <div
@@ -206,6 +179,7 @@ export default function GalleryView({
               controls
               autoPlay
               loop
+              aria-label={currentMedia.alt}
             >
               Your browser does not support the video tag.
             </video>
@@ -223,11 +197,12 @@ export default function GalleryView({
       ) : currentMedia.type === "video" ? (
         <video
           key={currentMedia.id}
-          className="absolute inset-0 w-full h-full max-w-full object-cover transition-opacity duration-300"
+          className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
           controls
           autoPlay
           loop
           muted
+          aria-label={currentMedia.alt}
         >
           <source
             src={currentMedia.src}
@@ -242,7 +217,7 @@ export default function GalleryView({
           alt={currentMedia.alt}
           priority
           fill
-          className="object-container transition-opacity duration-300"
+          className="object-contain transition-opacity duration-300"
         />
       )}
     </div>

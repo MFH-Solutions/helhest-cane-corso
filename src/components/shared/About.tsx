@@ -3,7 +3,6 @@ import Container from "../ui/Container";
 import Gallery from "../ui/Gallery";
 import { useTranslations } from "next-intl";
 import { MediaType } from "@/types/gallery";
-import { motion } from "framer-motion";
 import FadeInWhenVisible from "../animations/FadeInWhenVisible";
 
 type AboutProps = {
@@ -12,18 +11,28 @@ type AboutProps = {
 
 export default function About({ medias }: AboutProps) {
   const t = useTranslations("About");
+
   return (
     <section
       id="about"
-      className="bg-background dark:bg-background text-foreground dark:text-foreground"
+      className="bg-background py-16"
+      aria-labelledby="about-heading"
     >
       <Container>
-        <div className="flex flex-col gap-2 my-16">
+        {/* 8pt spacing: gap-8 (32px), my-16 removed in favor of section py-16 */}
+        <div className="flex flex-col gap-8">
           <FadeInWhenVisible>
-            <h2 className="text-primary dark:text-primary text-2xl lg:text-3xl xl:text-4xl">
-              {t("title")}
-            </h2>
-            <p> {t("description")}</p>
+            <div className="flex flex-col gap-4">
+              <h2
+                id="about-heading"
+                className="text-primary text-3xl lg:text-4xl xl:text-5xl font-bold"
+              >
+                {t("title")}
+              </h2>
+              <p className="text-foreground text-lg leading-relaxed">
+                {t("description")}
+              </p>
+            </div>
           </FadeInWhenVisible>
           <Gallery medias={medias} />
         </div>

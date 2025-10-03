@@ -9,9 +9,11 @@ const Container: React.FC<ContainerProps> = ({
   className,
   ...props
 }) => {
-  const defaultClass = "container mx-auto px-2 md:px-12";
+  // 8pt spacing system: px-4 (16px) md:px-8 (32px) lg:px-12 (48px)
+  const defaultClass = "container mx-auto px-4 md:px-8 lg:px-12";
+
   return (
-    <div className={`${defaultClass} ${className}`} {...props}>
+    <div className={`${defaultClass} ${className || ""}`} {...props}>
       {children}
     </div>
   );

@@ -26,14 +26,24 @@ export default function DesktopNavigation({
       return next;
     });
   };
-  // Fix navbar sizing
+
   return (
-    <nav className="hidden md:flex">
-      <ul className="flex items-center gap-6">
+    <nav className="hidden md:flex" aria-label="Main navigation">
+      {/* 8pt spacing system: gap-8 (32px) */}
+      <ul className="flex items-center gap-8">
         {navItems.map((item) => (
-          <NavItem key={item.id} item={item} />
+          <li key={item.id}>
+            <a
+              href={item.href}
+              className="text-white hover:text-primary transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
+            >
+              {item.label}
+            </a>
+          </li>
         ))}
-        <ThemeToggle />
+        <li>
+          <ThemeToggle />
+        </li>
       </ul>
     </nav>
   );

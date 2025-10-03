@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -13,39 +13,44 @@ export default function FAQ({ title, description, ...props }: FAQProps) {
 
   return (
     <div
-      className="w-full bg-gray-400  dark:bg-[#e8e8e8] rounded-xl"
+      className="w-full bg-surface border border-border rounded-xl overflow-hidden"
       {...props}
     >
       <button
-        className="cursor-pointer text-left w-full min-h-[50px] py-2 focus:outline-0"
         onClick={() => setIsOpen(!isOpen)}
+        className="cursor-pointer text-left w-full px-6 py-4 hover:bg-background/50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
+        aria-expanded={isOpen}
+        aria-controls={`faq-content-${title.replace(/\s+/g, "-").toLowerCase()}`}
       >
-        <div className="flex justify-between items-center px-4">
-          <span className="text-black">{title}</span>
+        <div className="flex justify-between items-center gap-4">
+          <h3 className="text-foreground font-semibold text-lg flex-1">
+            {title}
+          </h3>
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.2 }}
+            aria-hidden="true"
+            className="flex-shrink-0"
           >
-            <ChevronDown />
+            <ChevronDown className="w-5 h-5 text-muted" />
           </motion.div>
         </div>
       </button>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-gray-200 px-4 overflow-hidden rounded-xl"
-          >
-            <div className="py-4">
-              <p className="text-black">{description}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        id={`faq-content-${title.replace(/\s+/g, "-").toLowerCase()}`}
+        initial={false}
+        animate={{
+          height: isOpen ? "auto" : 0,
+          opacity: isOpen ? 1 : 0,
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <div className="px-6 py-4 bg-background/30 border-t border-border">
+          <p className="text-muted leading-relaxed">{description}</p>
+        </div>
+      </motion.div>
     </div>
   );
 }

@@ -7,7 +7,7 @@ type GalleryProps = React.HTMLAttributes<HTMLDivElement> & {
   medias: MediaType[];
 };
 
-export default function Gallery({ medias }: GalleryProps) {
+export default function Gallery({ medias, ...props }: GalleryProps) {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -17,17 +17,13 @@ export default function Gallery({ medias }: GalleryProps) {
   // Prevent body scroll when fullscreen is active
   useEffect(() => {
     if (isFullScreen) {
-      // Save current scroll position
       const scrollY = window.scrollY;
-
-      // Prevent scroll
       document.body.style.overflow = "hidden";
       document.body.style.position = "fixed";
       document.body.style.top = `-${scrollY}px`;
       document.body.style.width = "100%";
 
       return () => {
-        // Restore scroll
         document.body.style.overflow = "";
         document.body.style.position = "";
         document.body.style.top = "";
@@ -62,8 +58,24 @@ export default function Gallery({ medias }: GalleryProps) {
     setIsFullScreen(!isFullScreen);
   };
 
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        handlePrevious();
+      } else if (e.key === "ArrowRight") {
+        handleNext();
+      } else if (e.key === "Escape" && isFullScreen) {
+        setIsFullScreen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isFullScreen]);
+
   return (
-    <>
+    <div {...props}>
       {/* Regular Gallery */}
       <GalleryControls
         medias={memoizedMedias}
@@ -87,6 +99,6 @@ export default function Gallery({ medias }: GalleryProps) {
           isFullScreen={true}
         />
       )}
-    </>
+    </div>
   );
 }

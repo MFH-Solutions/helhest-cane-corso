@@ -23,56 +23,62 @@ export default function Card({
   ...props
 }: CardProps) {
   return (
-    <motion.div
+    <motion.article
       whileHover={{ scale: 1.01 }}
-      className={`max-w-sm bg-background border border-border rounded-lg shadow-sm dark:bg-background dark:border-border hover:transform ${className || ""}`}
+      className={`max-w-sm bg-surface border border-border rounded-xl shadow-sm transition-shadow hover:shadow-md ${className || ""}`}
       {...props}
     >
       {imageSrc &&
         (href ? (
-          <Link href={href}>
-            <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
+          <Link href={href} aria-label={`View more about ${title}`}>
+            <div className="relative w-full h-48 rounded-t-xl overflow-hidden">
               <Image
                 src={imageSrc}
                 alt={imageAlt || title}
                 fill
-                className="object-container"
+                className="object-contain p-4"
               />
             </div>
           </Link>
         ) : (
-          <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
+          <div className="relative w-full h-48 rounded-t-xl overflow-hidden">
             <Image
               src={imageSrc}
               alt={imageAlt || title}
               fill
-              className="object-container p-4"
+              className="object-contain p-4"
             />
           </div>
         ))}
-      <div className="p-5">
+
+      {/* 8pt spacing: p-6 (24px), gap-4 (16px) */}
+      <div className="p-6 flex flex-col gap-4">
         {href ? (
-          <Link href={href}>
-            <h5 className="mb-2 text-2xl tracking-tight text-primary dark:text-primary">
+          <Link
+            href={href}
+            className="hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+          >
+            <h3 className="text-2xl font-bold tracking-tight text-foreground">
               {title}
-            </h5>
+            </h3>
           </Link>
         ) : (
-          <h5 className="mb-2 text-2xl tracking-tight text-primary dark:text-primary">
+          <h3 className="text-2xl font-bold tracking-tight text-foreground">
             {title}
-          </h5>
+          </h3>
         )}
-        <p className="mb-3 font-normal text-muted dark:text-muted">
-          {description}
-        </p>
+
+        <p className="text-muted leading-relaxed">{description}</p>
+
         {buttonText && href && (
           <Link
             href={href}
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-foreground bg-background rounded-lg focus:ring-4 focus:outline-none focus:primary-ring dark:primary dark:primary-hover dark:focus:primary-ring"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-hover rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label={`${buttonText} about ${title}`}
           >
             {buttonText}
             <svg
-              className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              className="w-4 h-4"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -89,6 +95,6 @@ export default function Card({
           </Link>
         )}
       </div>
-    </motion.div>
+    </motion.article>
   );
 }
