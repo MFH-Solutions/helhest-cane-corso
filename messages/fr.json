@@ -41,7 +41,7 @@
   },
   "FAQ": {
     "inclusion": {
-      "title": "Ce qui est inclus avec votre chiot",
+      "title": "Ques qui est inclus avec votre chiot?",
       "description": "Tous nos chiots partent avec une garantie de santé de 26 mois contre les maladies héréditaires. Ils reçoivent leurs premiers vaccins, sont vermifugés régulièrement et identifiés par micropuce et enregistrer. De plus, ils sont socialisés dès leur plus jeune âge selon les programmes éprouvés Puppy Culture et Avidog, ce qui favorise un développement équilibré, une bonne adaptation à leur futur environnement et une base solide pour leur éducation."
     }
   },
@@ -69,12 +69,12 @@
     }
   },
   "Common": {
-    "Name": "Nom",
-    "Email": "Courriel",
-    "Phone": "Téléphone",
-    "Message": "Message",
-    "Submit": "Envoyer",
-    "Details": "Détails",
-    "Loading": "Chargement..."
+    "name": "Nom",
+    "email": "Courriel",
+    "phone": "Téléphone",
+    "message": "Message",
+    "submit": "Envoyer",
+    "details": "Détails",
+    "loading": "Chargement..."
   }
 }

@@ -41,7 +41,7 @@
   },
   "FAQ": {
     "inclusion": {
-      "title": "What's Included With Your Puppy",
+      "title": "What's Included With Your Puppy?",
       "description": "All of our puppies come with a 26-month health guarantee against hereditary diseases. They receive their first set of vaccines, are regularly dewormed, and are microchipped and registered. Additionally, they are socialized from an early age following the proven Puppy Culture and Avidog programs, promoting balanced development, smooth adaptation to new environments, and a strong foundation for future training."
     }
   },
@@ -69,12 +69,12 @@
     }
   },
   "Common": {
-    "Name": "Name",
-    "Email": "Email",
-    "Phone": "Phone",
-    "Message": "Message",
-    "Submit": "Submit",
-    "Details": "Details",
-    "Loading": "Loading..."
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Submit",
+    "details": "Details",
+    "loading": "Loading..."
   }
 }

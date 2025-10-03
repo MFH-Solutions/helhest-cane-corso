@@ -1,16 +1,16 @@
+import Image from "next/image";
+
 type IconText = {
   id: string;
   label: string;
-  icon: React.ReactNode;
+  icon: string;
 };
 
 export default function IconText({ item }: { item: IconText }) {
   return (
-    <li>
-      <div className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
-        {item.icon}
-      </div>
+    <div className="flex items-center">
+      <Image src={item.icon} alt={item.label} width={20} height={20} />
       <span className="flex-1 ms-3 whitespace-nowrap">{item.label}</span>
-    </li>
+    </div>
   );
 }
