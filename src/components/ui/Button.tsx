@@ -61,6 +61,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       disabled={disabled}
       className={`
+        cursor-pointer
         inline-flex items-center justify-center
         font-medium rounded-lg
         transition-all duration-200
