@@ -15,7 +15,7 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-primary ">
               {t("title")}
             </h1>
-            <p className="text-xl mb-8">{t("description")}</p>
+            <p className="text-white text-xl mb-8">{t("description")}</p>
             <div className="flex flex-col md:flex-row gap-2">
               <Button variant="primary">{t("cta_dog")}</Button>
               <Button variant="secondary">{t("cta_puppy")}</Button>
