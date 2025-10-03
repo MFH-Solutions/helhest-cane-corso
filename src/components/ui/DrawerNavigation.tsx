@@ -53,7 +53,7 @@ export function DrawerNavigation({
       >
         <h5
           id="drawer-navigation-label"
-          className="text-base font-semibold text-foreground uppercase"
+          className="text-lg font-semibold text-foreground uppercase"
         >
           Helhest Cane Corso
         </h5>
@@ -81,7 +81,7 @@ export function DrawerNavigation({
         </button>
 
         <nav className="py-4 overflow-y-auto">
-          <ul className="space-y-2 font-medium">
+          <ul className="font-medium flex flex-col gap-2">
             {navItems.map((item) => (
               <NavItem key={item.id} item={item} />
             ))}
@@ -94,7 +94,7 @@ export function DrawerNavigation({
                 onToggle={() => toggleDropdown(dropdown.id)}
               />
             ))}
-            <ThemeToggle className="ms-4" />
+            <ThemeToggle />
           </ul>
         </nav>
       </div>

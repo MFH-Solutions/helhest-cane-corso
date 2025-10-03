@@ -13,7 +13,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   return (
     <button
       onClick={toggleTheme}
-      className={`relative ms-4 inline-flex items-center h-6 w-11 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+      className={`relative inline-flex items-center h-6 w-11 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
         isDark ? "bg-gray-700" : "bg-blue-400"
       } ${className}`}
       aria-label="Toggle theme"

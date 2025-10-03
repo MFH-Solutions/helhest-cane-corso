@@ -29,7 +29,7 @@ export default function DesktopNavigation({
   // Fix navbar sizing
   return (
     <nav className="hidden md:flex">
-      <ul className="flex items-center gap-1">
+      <ul className="flex items-center gap-6">
         {navItems.map((item) => (
           <NavItem key={item.id} item={item} />
         ))}

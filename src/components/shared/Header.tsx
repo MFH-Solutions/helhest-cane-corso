@@ -3,41 +3,16 @@ import Container from "../ui/Container";
 import * as nav from "@/types/nav";
 import Link from "next/link";
 import Navbar from "./Navbar";
-import { useTranslations } from "next-intl";
-import { useMobileNavToggle } from "@/store/useMobileNavToggle"; // Import the store
+import { useMobileNavToggle } from "@/store/useMobileNavToggle";
 import Hero from "./Hero";
 
-export default function Header() {
-  const { toggleMenu } = useMobileNavToggle();
-  const t = useTranslations("Navigation");
+type HeaderProps = React.HtmlHTMLAttributes<HTMLElement> & {
+  navItems: nav.NavItem[];
+  dropdowns?: nav.NavDropdown[];
+};
 
-  const links: Array<nav.NavItem> = [
-    {
-      id: "home",
-      label: t("home"),
-      href: "/",
-    },
-    {
-      id: "breeding_dogs",
-      label: t("dog"),
-      href: "/dog",
-    },
-    {
-      id: "puppy",
-      label: t("puppy"),
-      href: "/puppy",
-    },
-    {
-      id: "contact",
-      label: t("contact"),
-      href: "/#contact",
-    },
-    {
-      id: "lang-switch",
-      label: t("lang-switch"),
-      href: "",
-    },
-  ];
+export default function Header({ navItems, dropdowns, ...props }: HeaderProps) {
+  const { toggleMenu } = useMobileNavToggle();
 
   return (
     <header className="relative bg-black min-h-screen flex flex-col">
@@ -57,7 +32,7 @@ export default function Header() {
               className="h-8 w-auto object-cover"
             />
           </button>
-          <Navbar navItems={links} isMobile={true} />
+          <Navbar navItems={navItems} isMobile={true} />
         </div>
       </Container>
       <Hero />
